@@ -21,7 +21,7 @@ const app =
     }
   }
 
-// order for exchange of cryptocurrencies
+// an order to exchange cryptocurrencies
 class Order {
   constructor(account_id, amt, price, side, from, to) {
     this.id = ('oid-' + Math.random().toString(36).substr(2, 9)),
@@ -73,8 +73,7 @@ class OrderBook {
 
   addBid(o) {
       // this.bids should be ordered lowest to highest price
-      // naive implementation for adding bids to orderbook,
-      // next iteration is thorough in tdd design
+      // naive implementation for adding bids to orderbook
       let n = this.bids.length
 
       let buyOrder;
@@ -111,7 +110,7 @@ class OrderBook {
 
   addAsk(o) {
       // this.asks should be ordered highest to lowest price
-      // naive implementation, next iteration is thorough in tdd design
+      // naive implementation
       let n = this.asks.length
 
       let sellOrder;
@@ -167,7 +166,7 @@ const Request = (pair) => {
       headers: {
           'User-Agent': 'Request-Promise'
       },
-      json: true // Automatically parses the JSON string in the response
+      json: true
   };
   return rp(options)
 }
@@ -223,7 +222,7 @@ class AskServer {
 class BidServer {
   constructor(ID, bidOrders) {
     this.askID = ID
-    this.bidOrders = bidOrders, // cached ask orders
+    this.bidOrders = bidOrders, // cached bid orders
     this.asJSON = () => {
       return JSON.stringify(this)
     }
@@ -242,13 +241,13 @@ class Account {
   }
 
   credit(amt, crypto_amt) {
-    // this.balance += amt
-    // this.crypto_balance -= amt
+    this.balance += amt
+    this.crypto_balance -= amt
   }
 
   debit(amt, crypto_amt) {
-    // this.balance -= amt
-    // this.crypto_balance += amt
+    this.balance -= amt
+    this.crypto_balance += amt
   }
 }
 
