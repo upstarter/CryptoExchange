@@ -1,4 +1,4 @@
-## Foundations of a Crypto Exchange in javascript (don't ask).
+## Foundations of a Crypto Exchange in NodeJS (don't ask).
 
 #### Fun side project to learn neutrino and Exchange mechanics
 
