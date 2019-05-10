@@ -1,0 +1,20 @@
+{
+  "name": "CryptoExchange",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "start": "neutrino start"
+  },
+  "devDependencies": {
+    "@neutrinojs/node": "^8.3.0",
+    "neutrino": "^8.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
